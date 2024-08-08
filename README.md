@@ -42,6 +42,10 @@ In this project, we:
 Clone the repository and install the required packages:
 
 ```bash
-[git clone https://github.com/yourusername/PanGnet-Hawk.git](https://github.com/AnshKapoor/PanGaNet-Hawk.git)
+git clone https://github.com/AnshKapoor/PanGaNet-Hawk.git
+```
+Getting started with project
+```bash
 cd PanGnet-Hawk
 pip install -r requirements.txt
+```
