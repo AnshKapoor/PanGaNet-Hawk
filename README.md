@@ -1,6 +1,6 @@
 # PanGaNet Hawk
 
-**PanGnet Hawk** is an innovative machine learning project that combines the power of Generative Adversarial Networks (GANs) with advanced pattern recognition techniques, inspired by the keen vision and agility of the hawk. This project aims to generate high-quality synthetic images from the PatternNet dataset and leverage these images to enhance the performance of a ResNet50 model.
+**PanGaNet Hawk** is an innovative machine learning project that combines the power of Generative Adversarial Networks (GANs) with advanced pattern recognition techniques, inspired by the keen vision and agility of the hawk. This project aims to generate high-quality synthetic images from the PatternNet dataset and leverage these images to enhance the performance of a ResNet50 model.
 
 ## Overview
 
@@ -17,3 +17,31 @@ In this project, we:
 - **High-Quality Synthetic Images**: Generation of realistic images that capture the intricate patterns within the dataset.
 - **Enhanced Model Training**: Utilization of synthetic data to boost the training process of the ResNet50 model.
 - **Comprehensive Evaluation**: Rigorous testing and evaluation of model performance on original data.
+
+## Project Structure
+
+- **data/**: Contains the original PatternNet dataset and generated synthetic images.
+- **models/**: Implementation of GAN and ResNet50 models.
+- **scripts/**: Training and evaluation scripts.
+- **notebooks/**: Jupyter notebooks for exploratory data analysis and visualization.
+- **results/**: Evaluation results, metrics, and visualizations.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.7+
+- TensorFlow 2.0+
+- NumPy
+- Matplotlib
+- OpenCV
+- scikit-learn
+
+### Installation
+
+Clone the repository and install the required packages:
+
+```bash
+[git clone https://github.com/yourusername/PanGnet-Hawk.git](https://github.com/AnshKapoor/PanGaNet-Hawk.git)
+cd PanGnet-Hawk
+pip install -r requirements.txt
