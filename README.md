@@ -1,4 +1,7 @@
 # PanGaNet Hawk
+<img src="https://github.com/user-attachments/assets/ad5ae022-ac0a-4a43-bcc3-ef734fea9161" alt="PanGnet Hawk Project Image" width="400">
+
+
 
 **PanGaNet Hawk** is an innovative machine learning project that combines the power of Generative Adversarial Networks (GANs) with advanced pattern recognition techniques, inspired by the keen vision and agility of the hawk. This project aims to generate high-quality synthetic images from the PatternNet dataset and leverage these images to enhance the performance of a ResNet50 model.
 
