@@ -46,36 +46,32 @@ class Discriminator(nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
         self.disc = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=5, stride=2, padding=2),
-            nn.BatchNorm2d(64, eps=1e-5),
+            nn.Conv2d(3, 64, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(64),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(64, 128, kernel_size=5, stride=2, padding=2),
-            nn.BatchNorm2d(128, eps=1e-5),
+            nn.Conv2d(64, 128, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(128, 256, kernel_size=5, stride=2, padding=2),
-            nn.BatchNorm2d(256, eps=1e-5),
+            nn.Conv2d(128, 256, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(256),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(256, 512, kernel_size=5, stride=1, padding=2),
-            nn.BatchNorm2d(512, eps=1e-5),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(512, 1024, kernel_size=5, stride=2, padding=2),
-            nn.BatchNorm2d(1024, eps=1e-5),
-            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(256, 512, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(512),
+            nn.LeakyReLU(0.2, inplace=True)
         )
-        
-        self.fc = nn.Linear(1024 * 2 * 2, 1)
+        self.flatten = nn.Flatten()
+        self.fc = nn.Linear(512 * 4 * 4, 1)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
         x = self.disc(x)
-        print("Shaope of x")
-        print(x.shape)  # Add this to see the shape
-
-        x = x.view(x.size(0), -1)  # Flatten the tensor
-        print("After flattening")
-        print(x.shape)
+        print("Shape after convolutional layers:", x.shape)  # Debugging shape
+        x = self.flatten(x)
+        print("Shape after flattening:", x.shape)  # Debugging shape
         logits = self.fc(x)
+        print("Getting logits",logits)
         out = self.sigmoid(logits)
+        print("Getting output",out)
         return out, logits
 
 # Factory function to create a Generator instance
